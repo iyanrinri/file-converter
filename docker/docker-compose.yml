@@ -1,6 +1,11 @@
 services:
   convert:
-    image: ghcr.io/${GITHUB_REPOSITORY:-p2r3/convert}:${CONVERT_IMAGE_TAG:-latest}
+    build:
+      context: ..
+      args:
+        VITE_COMMIT_SHA: docker
+      dockerfile: docker/Dockerfile
+    image: bromn-convert:latest
     ports:
       - "8080:80"
     restart: unless-stopped

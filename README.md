@@ -1,22 +1,22 @@
-# [Convert to it!](https://convert.to.it/)
-**Truly universal online file converter.**
+# [BroMN Converter](https://github.com/iyanrinri/file-converter)
+**Truly universal, modern, browser-based file converter.**
+
+BroMN Converter is a beautifully redesigned version of the original "Convert to it!" project. It features a premium Dark Theme UI, integrated with Tailwind CSS, and uses smooth, searchable dropdowns powered by Tom Select. 
 
 Many online file conversion tools are **boring** and **insecure**. They only allow conversion between two formats in the same medium (images to images, videos to videos, etc.), and they require that you _upload your files to some server_.
 
 This is not just terrible for privacy, it's also incredibly lame. What if you _really_ need to convert an AVI video to a PDF document? Try to find an online tool for that, I dare you.
 
-[Convert.to.it](https://convert.to.it/) aims to be a tool that "just works". You're almost _guaranteed_ to get an output - perhaps not always the one you expected, but it'll try its best to not leave you hanging.
-
-For a semi-technical overview of this tool, check out the video: https://youtu.be/btUbcsTbVA8
+BroMN Converter aims to be a tool that "just works". You're almost _guaranteed_ to get an output - perhaps not always the one you expected, but it'll try its best to not leave you hanging.
 
 ## Usage
 
-1. Go to [convert.to.it](https://convert.to.it/)
-2. Click the big blue box to add your file (or just drag it on to the window).
-3. An input format should have been automatically selected. If it wasn't, yikes! Try searching for it, or if it's really not there, see the "Issues" section below.
-4. Select an output format from the second list. If you're on desktop, that's the one on the right side. If you're on mobile, it'll be somewhere lower down.
+1. Open the application in your browser.
+2. Click the big dashed box to add your file (or just drag and drop it on to the window).
+3. An input format will be automatically selected based on your file.
+4. Select an output format from the searchable dropdown list.
 5. Click **Convert**!
-6. Hopefully, after a bit (or a lot) of thinking, the program will spit out the file you wanted. If not, see the "Issues" section below.
+6. Hopefully, after a bit of thinking, the program will spit out the file you wanted.
 
 ## Issues
 
@@ -55,27 +55,19 @@ After this is done (indicated by a `Built initial format list` message in the co
 
 If you run into issues where your changes seem to not be applying, try disabling this cache.
 
-### Docker (prebuilt image)
+### Docker Deployment
 
-Docker compose files live in the `docker/` directory, so run compose with `-f` from the repository root:
+To run the application via Docker, you can build and run the image locally using the provided `docker-compose.yml` file.
 
-```bash
-docker compose -f docker/docker-compose.yml up -d
-```
-
-Alternatively download the `docker-compose.yml` separately and start it by executing `docker compose up -d` in the same directory.
-
-This runs the container on `http://localhost:8080/convert/`.
-
-### Docker (local build for development)
-
-Use the override file to build the image locally:
+From the repository root, run:
 
 ```bash
-docker compose -f docker/docker-compose.yml -f docker/docker-compose.override.yml up --build -d
+docker compose -f docker/docker-compose.yml up --build -d
 ```
 
-The first Docker build is expected to be slow because Chromium and related system packages are installed in the build stage (needed for puppeteer in `buildCache.js`). Later builds are usually much faster due to Docker layer caching.
+The first Docker build may take some time because Chromium and related system packages are installed in the build stage. Later builds will be much faster due to layer caching.
+
+This runs the container and exposes it on `http://localhost:8080/convert/`.
 
 ## Contributing
 
