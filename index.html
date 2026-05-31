@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#0ea5e9',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+  <title>BroMN Converter</title>
+
+  <meta name="url" content="https://convert.to.it">
+  <meta name="identifier-URL" content="https://convert.to.it">
+  <meta name="og:url" content="https://convert.to.it" />
+  <meta name="og:title" content="BroMN Converter" />
+  <meta name="og:site_name" content="BroMN Converter" />
+  <meta name="og:description"
+    content="Truly universal online file converter. Private, on-device conversion across mediums." />
+  <meta name="og:image" content="https://p2r3.github.io/convert/assets/favicon-Bfod-rsk.ico" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="og:type" content="website" />
+</head>
+
+<body>
+
+  <input id="file-input" type="file">
+
+  <header class="app-header">
+    <div class="header-logo">
+      <img src="logo.svg" alt="BroMN Logo">
+      <h1>BroMN Converter</h1>
+    </div>
+    <div id="side-panel">
+      <button id="mode-button">Advanced mode</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div id="file-area">
+      <div class="file-area-content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="17 8 12 3 7 8" />
+          <line x1="12" y1="3" x2="12" y2="15" />
+        </svg>
+        <h2>Click to add your file</h2>
+        <p id="drop-hint-text">or drag and drop it here</p>
+      </div>
+    </div>
+
+    <div id="format-containers">
+      <div id="from-container" class="format-container w-full max-w-md">
+        <h2 class="mb-4">Convert from</h2>
+        <div id="loading-from" class="w-full text-center py-3 text-slate-400">
+          <div class="spinner !w-6 !h-6 !border-2 inline-block align-middle"></div>
+          <span class="ml-2 text-sm align-middle">Loading options...</span>
+        </div>
+        <div id="wrapper-from" class="w-full hidden">
+          <select id="select-from" placeholder="Search format..."></select>
+        </div>
+      </div>
+
+      <div class="transfer-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </div>
+
+      <div id="to-container" class="format-container w-full max-w-md">
+        <h2 class="mb-4">Convert to</h2>
+        <div id="loading-to" class="w-full text-center py-3 text-slate-400">
+          <div class="spinner !w-6 !h-6 !border-2 inline-block align-middle"></div>
+          <span class="ml-2 text-sm align-middle">Loading options...</span>
+        </div>
+        <div id="wrapper-to" class="w-full hidden">
+          <select id="select-to" placeholder="Search format..."></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="convert-wrapper">
+      <button id="convert-button" class="disabled">Convert</button>
+    </div>
+  </main>
+
+  <div id="popup-bg"></div>
+  <div id="popup">
+    <div class="spinner"></div>
+    <h2>Loading tools...</h2>
+  </div>
+
+  <script type="module" src="src/main.ts"></script>
+
+</body>
+
+</html>

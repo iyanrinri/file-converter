@@ -1,0 +1,17 @@
+<svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="96" cy="96" r="90" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
+  
+  <!-- Left bracket -->
+  <path d="M 55 60 L 45 96 L 55 132" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Right bracket -->
+  <path d="M 137 60 L 147 96 L 137 132" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Center B -->
+  <g>
+    <line x1="96" y1="55" x2="96" y2="137" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 96 60 Q 112 65 112 76 Q 112 85 96 90" fill="none" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 96 102 Q 112 104 112 117 Q 112 128 96 133" fill="none" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
